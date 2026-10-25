@@ -61,6 +61,11 @@
 
 > 타로는 재미로 보는 운세예요. 좋은 말은 믿고, 나쁜 말은 조심하라는 뜻으로 받아들여 주세요 🙂
 
+### 카드 그림 출처
+- 그림: 파멜라 콜먼 스미스(Pamela Colman Smith), 라이더-웨이트-스미스 타로, 1909~1910년 원본판
+- 파일: [위키미디어 공용 (Wikimedia Commons)](https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)) - 퍼블릭 도메인(Public domain)
+- 작가가 1951년에 세상을 떠나 저작권 보호 기간이 끝난 그림이에요. 게임에 맞게 크기만 줄이고 바깥 여백을 잘랐어요.
+
 ---
 
 ## 🛠️ 부스 운영 팁
