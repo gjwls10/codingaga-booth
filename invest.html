@@ -383,6 +383,14 @@ body.practice .news::before { background: linear-gradient(180deg, var(--practice
   .hero .chart-bg .area, .hero .chart-bg .dot { opacity: 1; }
 }
 
+/* 도장 아이콘: 빨간 이중 테두리 원 + 살짝 기울임 */
+.stamp-ico {
+  display: inline-flex; align-items: center; justify-content: center; vertical-align: middle;
+  width: 3.2em; height: 3.2em; margin: -.4em .45em -.4em 0; border: .32em double #d9232e; border-radius: 50%;
+  font-size: .58em; font-weight: 900; line-height: 1; color: #d9232e; background: #fff7ea;
+  transform: rotate(-12deg); box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
 </style>
 </head>
 <body>
@@ -1366,6 +1374,9 @@ const GAME = {
 };
 </script>
 <script>
+// 도장 1개 더 안내에 쓰는 빨간 도장 아이콘 (모양은 style.css 의 .stamp-ico)
+const STAMP_ICON = '<span class="stamp-ico" aria-hidden="true">도장</span>';
+
 // =====================================================================
 // 1. 데이터 꺼내기 (maingame.py 가 넣어 준 GAME 객체)
 // =====================================================================
@@ -1547,7 +1558,7 @@ function hideAttract() {
 
 function setupAttract() {
   $("attractRounds").textContent = CFG.rounds;
-  $("attractGift").textContent = `⭐ 하드 모드 수익률 ${CFG.giftRate}% 이상이면 도장 1개 더!`;
+  $("attractGift").innerHTML = `${STAMP_ICON} 하드 모드 수익률 ${CFG.giftRate}% 이상이면 도장 1개 더!`;
   // 배경에 떠오르는 장식 (돈, 그래프, 화살표)
   const icons = ["💰", "📈", "💵", "🪙", "📊", "🚀", "💎", "📰"];
   $("attractBg").innerHTML = Array.from({ length: 22 }, (_, i) =>
@@ -1810,7 +1821,7 @@ function finish() {
     $("giftBox").innerHTML = '<div class="nogift">연습 모드는 추가 도장과 순위가 없어요. 이제 <b>하드 모드</b>에 도전해 보세요!</div>';
   } else {
     $("giftBox").innerHTML = rate >= CFG.giftRate
-      ? `<div class="gift">⭐ 수익률 ${CFG.giftRate}% 달성! 진행자에게 이 화면을 보여주고 도장 1개 더 받으세요</div>`
+      ? `<div class="gift">${STAMP_ICON} 수익률 ${CFG.giftRate}% 달성! 진행자에게 이 화면을 보여주고 도장 1개 더 받으세요</div>`
       : `<div class="nogift">도장 1개 더 받는 수익률 ${CFG.giftRate}%까지 ${(CFG.giftRate - rate).toFixed(1)}%p 남았어요. 다시 도전!</div>`;
   }
   renderRank("resRank", myId);
@@ -1930,7 +1941,7 @@ function init() {
     `<b>${CFG.timeLimit}초</b> 안에 오를 것 같은 종목 1개 또는 현금 보유를 고르세요.`,
     `<span class="up">빨강 = 상승</span>, <span class="down">파랑 = 하락</span>`,
   ].map((t) => `<li>${t}</li>`).join("");
-  $("giftNote").textContent = `⭐ 하드 모드 최종 수익률 ${CFG.giftRate}% 이상이면 도장 1개 더! (연습 모드는 해당 없음)`;
+  $("giftNote").innerHTML = `${STAMP_ICON} 하드 모드 최종 수익률 ${CFG.giftRate}% 이상이면 도장 1개 더! (연습 모드는 해당 없음)`;
 
   const choices = $("choices");
   STOCKS.forEach((s, i) => {
