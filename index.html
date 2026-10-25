@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>코딩아가 부스</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 32px 16px;
+         font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; color: #eef2fb;
+         background: radial-gradient(800px 500px at 10% 0%, rgba(61,139,255,.25), transparent 60%),
+                     radial-gradient(800px 500px at 90% 100%, rgba(170,110,255,.25), transparent 60%), #0a0d1c; }
+  main { width: min(880px, 100%); text-align: center; }
+  h1 { font-size: clamp(36px, 7vw, 60px); margin: 0; letter-spacing: -1px; }
+  h1 span { color: #ffcc33; }
+  p.sub { color: #9aa6c8; font-size: 18px; margin: 10px 0 30px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  a.game { display: block; text-decoration: none; color: inherit; padding: 30px 22px; border-radius: 24px;
+           background: rgba(22,31,58,.8); border: 1.5px solid var(--c); box-shadow: 0 16px 36px rgba(0,0,0,.4);
+           transition: transform .2s, box-shadow .2s; }
+  a.game:hover { transform: translateY(-6px); box-shadow: 0 0 30px var(--g), 0 16px 36px rgba(0,0,0,.4); }
+  .emo { font-size: 64px; }
+  .nm { font-size: 28px; font-weight: 900; margin-top: 8px; color: var(--c); }
+  .ds { color: #b8c3e3; margin-top: 6px; line-height: 1.5; }
+  .go { display: inline-block; margin-top: 16px; padding: 9px 18px; border-radius: 999px; background: var(--c); color: #141414; font-weight: 900; }
+  .all { display: inline-block; margin-top: 26px; color: #c9d3ef; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); }
+  .all:hover { background: rgba(255,255,255,.06); }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>코딩아가 <span>부스</span></h1>
+  <p class="sub">하고 싶은 게임을 골라 주세요</p>
+  <div class="grid">
+    <a class="game" href="invest.html" style="--c:#ffcc33;--g:rgba(255,204,51,.35)">
+      <div class="emo">📈</div><div class="nm">1분 투자 챌린지</div>
+      <div class="ds">뉴스를 읽고 오를 종목을 골라<br>가상 자금 100만 원을 불려 보세요</div>
+      <span class="go">시작하기 →</span>
+    </a>
+    <a class="game" href="tarot.html" style="--c:#c9a6ff;--g:rgba(190,140,255,.35)">
+      <div class="emo">🔮</div><div class="nm">오늘의 타로</div>
+      <div class="ds">연애운 · 학업운 · 금전운<br>카드 78장 중 3장을 뽑아 보세요</div>
+      <span class="go">시작하기 →</span>
+    </a>
+  </div>
+  <a class="all" href="booth.html">🗂️ 두 게임을 탭으로 함께 열기</a>
+</main>
+</body>
+</html>
