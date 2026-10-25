@@ -101,3 +101,5 @@ git add . && git commit -m "게임 업데이트" && git push
 ```
 
 push 하고 1~2분 뒤에 링크에 반영돼요.
+
+> `git push`에서 `could not read Username` 오류가 나면 `gh auth setup-git`을 한 번 실행한 뒤 다시 push 하세요.
